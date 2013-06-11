@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Another Page</title>
+
+    <script>
+
+        function displayDate() {
+            document.getElementById("demo").innerHTML=new Date();
+        }
+
+    </script>
+</head>
+<body>
+
+<h1>Another Page</h1>
+
+<div>
+    <p id="demo">This will become the date.</p>
+</div>
+
+<div>
+    <a href="index.html">This is a link to the Index Page.</a>
+</div>
+
+<div>
+    <script>
+        document.write("<div>Hello World! from JavaScript</div>");
+        document.write("<hr/>");
+    </script>
+</div>
+
+<div>
+    <button type="button" onclick="displayDate()">Display Date</button>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<h2>Create object from json string retrieved by webservice.</h2>
+<p>
+    First Name: <span id="fname"></span><br>
+    Last Name:  <span id="lname"></span><br>
+</p>
+
+<script>
+    var httpRequest = new XMLHttpRequest();
+    httpRequest.onreadystatechange = function() {
+        if (httpRequest.readyState == 4 && httpRequest.status == 200) {
+            var txt = httpRequest.responseText;
+            var obj = JSON.parse(txt);
+
+            document.getElementById("fname").innerHTML = obj.employees[1].firstName;
+            document.getElementById("lname").innerHTML = obj.employees[1].lastName;
+        }
+    };
+
+    httpRequest.open("GET", "service", true);
+    httpRequest.send(null);
+</script>
+
+</body>
+</html>

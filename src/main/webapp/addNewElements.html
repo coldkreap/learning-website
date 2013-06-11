@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function appendLinks() {
+            var LINK = "index.html";
+            var LINK_TEXT = "Index page: ";
+            var indexLinksDiv = document.getElementById("indexLinks");
+            for (var i = 0; i < 3; i++) {
+                var aLink = document.createElement("a");
+                aLink.setAttribute("href", LINK);
+                var textNode = document.createTextNode(LINK_TEXT + i);
+                aLink.appendChild(textNode);
+                indexLinksDiv.appendChild(aLink);
+                indexLinksDiv.appendChild(document.createElement("br"));
+            }
+        }
+    </script>
+</head>
+<body onload="appendLinks()">
+<h1>Should have 3 links to the index page.</h1>
+
+<div id="indexLinks"></div>
+</body>
+</html>
